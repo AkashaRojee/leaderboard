@@ -7,6 +7,6 @@ const init = () => {
   const scoreForm = new ScoreForm();
   leaderboard.setEventListener();
   scoreForm.setEventListener(leaderboard);
-}
+};
 
 window.addEventListener('load', init);
