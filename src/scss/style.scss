@@ -16,6 +16,15 @@ main {
   & > div {
     margin-top: 50px;
   }
+
+  ul {
+    border: 1px solid black;
+    list-style: none;
+
+    & > li + li {
+      border-top: 1px solid black;
+    }
+  }
   
   form {
     & > * + * {
