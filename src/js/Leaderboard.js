@@ -1,4 +1,3 @@
-import Score from './Score.js';
 import { createElement } from './library.js';
 
 export default class Leaderboard {
@@ -8,24 +7,16 @@ export default class Leaderboard {
   }
 
   setEventListener() {
-    const submitButton = document.querySelector('form button');
-    submitButton.addEventListener('click', (e) => this.add(e));
+    const refreshButton = document.querySelector('button');
+    refreshButton.addEventListener('click', () => this.refresh());
   }
 
-  add(e) {
-    
-    //get values and clear fields
-    const inputValues = document.querySelectorAll('form input');
-    const name = inputValues[0].value;
-    const score = inputValues[1].value;
-    inputValues[0].value = '';
-    inputValues[1].value = '';
-    inputValues[0].focus();
+  add(score) {
+    this.scores.push(Object.assign({}, score));
+    this.refresh();
+  }
 
-    //save values in array
-    this.scores.push(new Score(name, score));
-
-    //repopulate list
+  refresh() {
     let list = document.querySelector('ul');
     let listItems = [];
     this.scores.forEach(score => {
@@ -33,8 +24,6 @@ export default class Leaderboard {
     });
     list.innerHTML = '';
     list.append(...listItems);
-
-    e.preventDefault();
   }
 
 }
