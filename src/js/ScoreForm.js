@@ -1,5 +1,3 @@
-import Leaderboard from "./Leaderboard";
-
 export default class ScoreForm {
   constructor() {
     this.name = '';
@@ -12,7 +10,7 @@ export default class ScoreForm {
   }
 
   submitScore(e, leaderboard) {
-    e.preventDefault(); 
+    e.preventDefault();
     this.createScore();
     leaderboard.add(this);
   }

@@ -1,4 +1,4 @@
-export function createElement(elementType, classNames = '', attributes = {}, innerHTML = '', properties = {}) {
+export default function createElement(elementType, classNames = '', attributes = {}, innerHTML = '', properties = {}) {
   const elementObject = document.createElement(elementType);
   if (classNames) elementObject.classList.add(...(classNames.split(' ')));
   Object.keys(attributes).forEach((attribute) => {

@@ -1,7 +1,6 @@
-import { createElement } from './library.js';
+import createElement from './library.js';
 
 export default class Leaderboard {
-
   constructor() {
     this.scores = [];
   }
@@ -12,18 +11,17 @@ export default class Leaderboard {
   }
 
   add(score) {
-    this.scores.push(Object.assign({}, score));
+    this.scores.push({ ...score });
     this.refresh();
   }
 
   refresh() {
-    let list = document.querySelector('ul');
-    let listItems = [];
-    this.scores.forEach(score => {
+    const list = document.querySelector('ul');
+    const listItems = [];
+    this.scores.forEach((score) => {
       listItems.push(createElement('li', '', '', `${score.name}: ${score.score}`));
     });
     list.innerHTML = '';
     list.append(...listItems);
   }
-
 }
