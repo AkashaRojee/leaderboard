@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open",
-    "build": "webpack"
+    "build": "webpack",
+    "eslint": "eslint src/js",
+    "stylelint": "stylelint src/scss",
+    "hint": "hint src",
+    "lighthouse": "lighthouse http://localhost:8080/"
   },
   "repository": {
     "type": "git",
