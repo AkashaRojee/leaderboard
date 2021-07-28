@@ -1,0 +1,41 @@
+@mixin direction($direction-property) {
+  flex-direction: $direction-property;
+}
+
+@mixin justify($justify-property) {
+  justify-content: $justify-property;
+}
+
+@mixin align($align-property) {
+  align-items: $align-property;
+}
+
+%flex {
+  display: flex;
+}
+
+.flex-col {
+  @extend %flex;
+  @include direction($direction-property: column);
+}
+
+.flex-row {
+  @extend %flex;
+  @include direction($direction-property: row);
+}
+
+.justify-between {
+  @include justify($justify-property: space-between);
+}
+
+.justify-around {
+  @include justify($justify-property: space-around);
+}
+
+.justify-end {
+  @include justify($justify-property: flex-end);
+}
+
+.align-center {
+  @include align($align-property: center);
+}

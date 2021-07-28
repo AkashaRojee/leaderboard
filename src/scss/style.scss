@@ -1,0 +1,25 @@
+@import 'flex.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.w-40 {
+  width: 30%;
+}
+
+main {
+  margin: 30px 15px;
+
+  & > div {
+    margin-top: 50px;
+  }
+  
+  form {
+    & > * + * {
+      margin-top: 10px;
+    }
+  }
+}
