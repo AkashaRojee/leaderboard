@@ -4,7 +4,7 @@
 
 > Leaderboard-style website
 
-![screenshot](screenshot-mobile.png)
+<!-- ![screenshot](screenshot-mobile.png) -->
 
 This project is a leaderboard-style website built using ES6 and Webpack as part of Microverse projects.
 
