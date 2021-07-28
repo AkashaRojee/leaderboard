@@ -1,4 +1,4 @@
-import createElement from './library.js';
+import { createElement } from './library.js';
 
 export default class Leaderboard {
   constructor() {
