@@ -7,25 +7,33 @@
 <script defer src="main.js"></script></head>
 <body>
 
-  <div class="flex-row">
+  <main>
 
-    <div class="flex-col">
+    <h1>Leaderboard</h1>
 
-      <div class="flex-row justify-between">
-        <span>Recent scores</span>
-        <button>Refresh</button>
+    <div class="flex-row justify-around">
+
+      <div class="flex-col w-40">
+        <div class="flex-row justify-between align-center">
+          <h2>Recent scores</h2>
+          <button type="button">Refresh</button>
+        </div>
+        <ul>
+          <!-- Populated dynamically -->
+        </ul>
       </div>
 
+      <form class="flex-col w-40">
+        <h2>Add your score</h2>
+        <input type="text" placeholder="Your name">
+        <input type="text" placeholder="Your score">
+        <div class="flex-row justify-end">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+
     </div>
-
-    <form action="" class="flex-col">
-      <span>Add your score</span>
-      <input type="text">
-      <input type="text">
-      <button>Submit</button>
-    </form>
-
-  </div>
+  </main>
 
 </body>
 </html>
