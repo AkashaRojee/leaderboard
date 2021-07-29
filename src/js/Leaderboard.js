@@ -5,15 +5,19 @@ export default class Leaderboard {
     this.scores = [];
   }
 
-  setEventListener() {
+  setEventListener(api) {
     const refreshButton = document.querySelector('button');
-    refreshButton.addEventListener('click', () => this.refresh());
+    refreshButton.addEventListener('click', () => this.refresh(api));
+  }
+
+  refresh(api) {
+    api.get(this);
   }
 
   load(scores) {
     this
       .setScores(scores)
-      .refresh();
+      .populate();
   }
 
   setScores(scores) {
@@ -21,7 +25,7 @@ export default class Leaderboard {
     return this;
   }
 
-  refresh() {
+  populate() {
     const list = document.querySelector('ul');
     const listItems = [];
     this.scores.forEach((score) => {

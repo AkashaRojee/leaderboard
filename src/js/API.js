@@ -4,29 +4,25 @@ export default class API {
   }
 
   async get(leaderboard) {
-    
-    let response = await fetch(this.url);
-    
-    let data = await response.json();
+    const response = await fetch(this.url);
+
+    const data = await response.json();
 
     leaderboard.load(data.result);
-    
   }
 
   async post(score) {
-
     await fetch(
-      
+
       this.url,
-      
+
       {
         method: 'POST',
         headers: {
-          'Content-type': 'application/json'
+          'Content-type': 'application/json',
         },
-        body: JSON.stringify(score)
-      }
-    )
-
+        body: JSON.stringify(score),
+      },
+    );
   }
 }

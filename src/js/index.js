@@ -8,7 +8,7 @@ const init = () => {
   const scoreForm = new ScoreForm();
   const api = new API('lI1z1EFW1xGXNj2JItHX');
 
-  leaderboard.setEventListener();
+  leaderboard.setEventListener(api);
   scoreForm.setEventListener(api);
   api.get(leaderboard);
 };
