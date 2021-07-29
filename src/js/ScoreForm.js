@@ -12,15 +12,15 @@ export default class ScoreForm {
   submitScore(e, api) {
     e.preventDefault();
     this.createScore();
-    api.post(this);
+    if (Object.values(this).every(value => value !== '')) api.post(this);
   }
 
   createScore() {
     const inputValues = document.querySelectorAll('form input');
-    this.user = inputValues[0].value;
-    this.score = inputValues[1].value;
-    inputValues[0].value = '';
-    inputValues[1].value = '';
-    inputValues[0].focus();
+    if (Array.from(inputValues).every(inputValue => inputValue.value !== '')) {
+      [this.user, this.score] = [inputValues[0].value, inputValues[1].value];
+      inputValues.forEach(inputValue => inputValue.value = '');
+      inputValues[0].focus();
+    }
   }
 }
