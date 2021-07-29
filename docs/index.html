@@ -3,9 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack Boilerplate</title>
+  <title>Leaderboard</title>
 <script defer src="main.js"></script></head>
 <body>
+
+  <main>
+
+    <h1>Leaderboards</h1>
+
+    <div class="flex-row justify-around">
+
+      <div class="flex-col w-40">
+        <div class="flex-row justify-between align-center">
+          <h2>Recent scores</h2>
+          <button type="button">Refresh</button>
+        </div>
+        <ul>
+          <!-- Populated dynamically -->
+        </ul>
+      </div>
+
+      <form class="flex-col w-40">
+        <h2>Add your score</h2>
+        <input type="text" placeholder="Your name">
+        <input type="text" placeholder="Your score">
+        <div class="flex-row justify-end">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+
+    </div>
+  </main>
 
 </body>
 </html>
