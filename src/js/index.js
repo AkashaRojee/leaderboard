@@ -10,8 +10,6 @@ const init = () => {
 
   leaderboard.setEventListener();
   scoreForm.setEventListener(api);
-
-  
   api.get(leaderboard);
 };
 

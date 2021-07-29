@@ -1,11 +1,11 @@
 export default class API {
   constructor(id) {
-    this.id = id;
+    this.url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores`;
   }
 
   async get(leaderboard) {
     
-    let response = await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${this.id}/scores`);
+    let response = await fetch(this.url);
     
     let data = await response.json();
 
@@ -17,7 +17,7 @@ export default class API {
 
     await fetch(
       
-      `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${this.id}/scores`,
+      this.url,
       
       {
         method: 'POST',
@@ -27,7 +27,6 @@ export default class API {
         body: JSON.stringify(score)
       }
     )
-
 
   }
 }
