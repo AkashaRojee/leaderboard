@@ -12,4 +12,22 @@ export default class API {
     leaderboard.load(data.result);
     
   }
+
+  async post(score) {
+
+    await fetch(
+      
+      `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${this.id}/scores`,
+      
+      {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify(score)
+      }
+    )
+
+
+  }
 }

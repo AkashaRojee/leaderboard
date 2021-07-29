@@ -1,23 +1,24 @@
 export default class ScoreForm {
   constructor() {
-    this.name = '';
+    this.user = '';
     this.score = '';
   }
 
-  setEventListener(leaderboard) {
+  setEventListener(api) {
     const submitButton = document.querySelector('form button');
-    submitButton.addEventListener('click', (e) => this.submitScore(e, leaderboard));
+    submitButton.addEventListener('click', (e) => this.submitScore(e, api));
   }
 
-  submitScore(e, leaderboard) {
+  submitScore(e, api) {
     e.preventDefault();
     this.createScore();
-    leaderboard.add(this);
+    api.post(this);
+    // leaderboard.add(this);
   }
 
   createScore() {
     const inputValues = document.querySelectorAll('form input');
-    this.name = inputValues[0].value;
+    this.user = inputValues[0].value;
     this.score = inputValues[1].value;
     inputValues[0].value = '';
     inputValues[1].value = '';
