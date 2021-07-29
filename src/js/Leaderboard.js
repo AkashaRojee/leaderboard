@@ -21,11 +21,6 @@ export default class Leaderboard {
     return this;
   }
 
-  add(score) {
-    this.scores.push({ ...score });
-    this.refresh();
-  }
-
   refresh() {
     const list = document.querySelector('ul');
     const listItems = [];

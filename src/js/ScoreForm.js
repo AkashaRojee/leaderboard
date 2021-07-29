@@ -13,7 +13,6 @@ export default class ScoreForm {
     e.preventDefault();
     this.createScore();
     api.post(this);
-    // leaderboard.add(this);
   }
 
   createScore() {
