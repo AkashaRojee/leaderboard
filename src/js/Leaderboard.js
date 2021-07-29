@@ -5,21 +5,31 @@ export default class Leaderboard {
     this.scores = [];
   }
 
-  setEventListener() {
+  setEventListener(api) {
     const refreshButton = document.querySelector('button');
-    refreshButton.addEventListener('click', () => this.refresh());
+    refreshButton.addEventListener('click', () => this.refresh(api));
   }
 
-  add(score) {
-    this.scores.push({ ...score });
-    this.refresh();
+  refresh(api) {
+    api.get(this);
   }
 
-  refresh() {
+  load(scores) {
+    this
+      .setScores(scores)
+      .populate();
+  }
+
+  setScores(scores) {
+    this.scores = scores;
+    return this;
+  }
+
+  populate() {
     const list = document.querySelector('ul');
     const listItems = [];
     this.scores.forEach((score) => {
-      listItems.push(createElement('li', '', '', `${score.name}: ${score.score}`));
+      listItems.push(createElement('li', '', '', `${score.user}: ${score.score}`));
     });
     list.innerHTML = '';
     list.append(...listItems);
