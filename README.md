@@ -20,6 +20,11 @@ Things done so far:
 - Split JS files into modules
 - Configure repository to deploy from Webpack output directory
 
+### 2. Send and receive data from API
+
+- Implement API endpoint to save and load scores
+- Use async/await for API operations
+
 ## Built With
 
 - Major languages: HTML, SCSS, JS
