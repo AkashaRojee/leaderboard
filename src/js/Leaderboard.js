@@ -10,6 +10,17 @@ export default class Leaderboard {
     refreshButton.addEventListener('click', () => this.refresh());
   }
 
+  load(scores) {
+    this
+      .setScores(scores)
+      .refresh();
+  }
+
+  setScores(scores) {
+    this.scores = scores;
+    return this;
+  }
+
   add(score) {
     this.scores.push({ ...score });
     this.refresh();
@@ -19,7 +30,7 @@ export default class Leaderboard {
     const list = document.querySelector('ul');
     const listItems = [];
     this.scores.forEach((score) => {
-      listItems.push(createElement('li', '', '', `${score.name}: ${score.score}`));
+      listItems.push(createElement('li', '', '', `${score.user}: ${score.score}`));
     });
     list.innerHTML = '';
     list.append(...listItems);
