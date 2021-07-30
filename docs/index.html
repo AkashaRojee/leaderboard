@@ -9,35 +9,52 @@
 
   <main>
 
-    <h1 class="flex-col align-center">Leaderboards</h1>
+    <h1 class="flex-col align-center header">Leaderboards</h1>
 
     <div class="flex-row justify-around">
 
-      <div class="flex-col w-40 lb">
+      <div class="flex-col w-40 container p-y-20">
 
-        <div class="flex-col lb-header">
-          <div class="flex-row justify-between align-center">
-            <h2>Recent scores</h2>
-            <button type="button">Refresh</button>
+        <div class="flex-col header p-x-20">
+          <div class="flex-row justify-center">
+            <button class="hidden m-r-auto" type="button">Refresh</button>
+            <h2>Recent fatalities</h2>
+            <button class="m-l-auto" type="button">Refresh</button>
           </div>
         </div>
 
-        <ul>
+        <ul class="m-t-20 p-x-20 m-t-children">
           <!-- Populated dynamically -->
         </ul>
       </div>
+      <div class="flex-col justify-center">
+      <form class="flex-col container p-y-20">
 
-      <form class="flex-col w-40">
-        <h2 class="flex-col align-center">Get your score in here!</h2>
-        <input type="text" placeholder="Your name">
-        <input type="text" placeholder="Your score">
-        <div class="flex-row justify-end">
-          <button type="submit">Submit</button>
+        <h2 class="flex-col align-center header p-x-20">Get your score in here!</h2>
+
+        <div class="flex-col m-t-20 p-x-20 m-t-children">
+
+          <input type="text" placeholder="Your name">
+
+          <input type="text" placeholder="Your score">
+
+          <div class="flex-row justify-end">
+            <button type="submit">Submit</button>
+          </div>
+
         </div>
+        
       </form>
+      </div>
 
     </div>
   </main>
+
+  <footer>
+    <p class="header">
+      Made with love, coffee, and metal by <a href="https://github.com/AkashaRojee" target="_blank" rel="noopener">Akasha Rojee</a>
+    </p>
+  </footer>
 
 </body>
 </html>
