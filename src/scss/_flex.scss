@@ -26,6 +26,10 @@
   @include direction($direction-property: row);
 }
 
+.justify-center {
+  @include justify($justify-property: center);
+}
+
 .justify-between {
   @include justify($justify-property: space-between);
 }

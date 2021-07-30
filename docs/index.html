@@ -9,22 +9,26 @@
 
   <main>
 
-    <h1>Leaderboards</h1>
+    <h1 class="flex-col align-center">Leaderboards</h1>
 
     <div class="flex-row justify-around">
 
-      <div class="flex-col w-40">
-        <div class="flex-row justify-between align-center">
-          <h2>Recent scores</h2>
-          <button type="button">Refresh</button>
+      <div class="flex-col w-40 lb">
+
+        <div class="flex-col lb-header">
+          <div class="flex-row justify-between align-center">
+            <h2>Recent scores</h2>
+            <button type="button">Refresh</button>
+          </div>
         </div>
+
         <ul>
           <!-- Populated dynamically -->
         </ul>
       </div>
 
       <form class="flex-col w-40">
-        <h2>Add your score</h2>
+        <h2 class="flex-col align-center">Get your score in here!</h2>
         <input type="text" placeholder="Your name">
         <input type="text" placeholder="Your score">
         <div class="flex-row justify-end">

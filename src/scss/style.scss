@@ -4,31 +4,145 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
+}
+
+.w-25 {
+  width: 25%;
 }
 
 .w-40 {
-  width: 30%;
+  width: 40%;
+}
+
+body {
+  height: 100vh;
+  background-image: url('../bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 main {
-  margin: 30px 15px;
 
   & > div {
     margin-top: 50px;
   }
 
   ul {
-    border: 1px solid black;
     list-style: none;
 
-    & > li + li {
-      border-top: 1px solid black;
+    li {
+      border: 2px solid #1F2120;
+      background: linear-gradient(90deg, #10100E 1.15%, #1F2120 47.97%, #10100E 95.75%);
+      font-size: 20px;
+      padding: 10px 15px;
     }
   }
 
-  form {
-    & > * + * {
-      margin-top: 10px;
+  input {
+    font-size: 20px;
+    padding: 10px 15px;
+    color: black;
+    outline: none;
+    border: 2px solid #1F2120;
+  }
+}
+
+.container {
+  background: rgba(0,0,0,1);
+  border: 3px solid;
+  border-image-source: linear-gradient(90deg, #5D4F24 0%, #A3905A 48.05%, #56471D 95.7%);
+  border-image-slice: 1;
+}
+
+%pseudo {
+  content: '';
+  height: 1px;
+  width: 90%;
+  display: block;
+  background: linear-gradient(90deg, #1F1908 1.15%, #B7A156 47.97%, #1F1908 95.75%);
+}
+
+.header {
+  background: linear-gradient(90.02deg, #1F0300 5.41%, #450B0A 51.03%, #1F0300 95.44%);
+
+  &:before {
+    @extend %pseudo;
+    margin-bottom: 5px;
+  }
+
+  &:after {
+    @extend %pseudo;
+    margin-top: 5px;
+  }
+}
+
+button {
+  background: none;
+  border: 1px solid #8F7C4570;
+  color: #8F7C45;
+  padding: 5px 10px;
+  font-size: 16px;
+
+  &:hover {
+    cursor: pointer;
+    background: #8F7C45;
+    color: #450B0A;
+  }
+}
+
+footer {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 100%;
+  
+  p {
+    text-align: center;
+    font-style: italic;
+    font-size: 12px;
+
+    a {
+      font-weight: bold;
     }
   }
+}
+
+// classes
+
+.hidden {
+  visibility: hidden;
+}
+
+%m-t-children {
+  & > * + * {
+    margin-top: 10px;
+  }
+}
+
+.m-t-children {
+  @extend %m-t-children;
+}
+
+.m-l-auto {
+  margin-left: auto;
+}
+
+.m-r-auto {
+  margin-right: auto;
+}
+
+.m-t-20 {
+  margin-top: 20px;
+}
+
+.p-x-20 {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.p-y-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

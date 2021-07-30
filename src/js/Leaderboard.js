@@ -28,8 +28,12 @@ export default class Leaderboard {
   populate() {
     const list = document.querySelector('ul');
     const listItems = [];
-    this.scores.forEach((score) => {
-      listItems.push(createElement('li', '', '', `${score.user}: ${score.score}`));
+    this.scores.forEach((score, index) => {
+      const user = createElement('span', '', '', `${score.user}`);
+      const userScore = createElement('span', '', '', `${score.score}`);
+      const listItem = createElement('li', 'flex-row justify-between');
+      listItem.append(user, userScore);
+      if (index < 6) listItems.push(listItem);
     });
     list.innerHTML = '';
     list.append(...listItems);
