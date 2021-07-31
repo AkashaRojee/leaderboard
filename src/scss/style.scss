@@ -54,7 +54,6 @@ main {
       background: none;
       border: 1px solid #8f7c4570;
       color: #8f7c45;
-      padding: 5px 10px;
       font-size: 16px;
 
       &:hover {
@@ -130,13 +129,11 @@ footer {
 
   &::before {
     @extend %pseudo;
-
     margin-bottom: 5px;
   }
 
   &::after {
     @extend %pseudo;
-
     margin-top: 5px;
   }
 }
