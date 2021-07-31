@@ -129,11 +129,13 @@ footer {
 
   &::before {
     @extend %pseudo;
+
     margin-bottom: 5px;
   }
 
   &::after {
     @extend %pseudo;
+
     margin-top: 5px;
   }
 }
