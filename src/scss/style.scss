@@ -1,103 +1,100 @@
 @import 'flex.scss';
+@import 'utilities.scss';
+
+@font-face {
+  font-family: 'adelon-serial-light-regular';
+  src:
+    url('../assets/fonts/adelon-serial-light-regular-webfont.woff2') format('woff2'),
+    url('../assets/fonts/adelon-serial-light-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: white;
+  font-family: 'adelon-serial-light-regular', serif;
+  font-size: 20px;
+  font-weight: normal;
 }
 
-.w-25 {
-  width: 25%;
+h1 {
+  font-size: 24px;
 }
 
-.w-40 {
-  width: 40%;
+h2 {
+  color: #e2a9a6;
 }
 
 body {
-  height: 100vh;
-  background-image: url('../bg.png');
-  background-size: cover;
+  background-attachment: fixed;
+  background-image: url('../assets/bg.png');
   background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  position: sticky;
+  top: 0;
 }
 
 main {
+  height: calc(100vh - 67px);
+  min-height: 350px;
 
-  & > div {
-    margin-top: 50px;
-  }
+  .container {
+    background: rgba(0, 0, 0, 1);
+    border: 3px solid;
+    border-image-source: linear-gradient(90deg, #5d4f24 0%, #a3905a 48.05%, #56471d 95.7%);
+    border-image-slice: 1;
 
-  ul {
-    list-style: none;
+    button {
+      background: none;
+      border: 1px solid #8f7c4570;
+      color: #8f7c45;
+      padding: 5px 10px;
+      font-size: 16px;
 
-    li {
-      border: 2px solid #1F2120;
-      background: linear-gradient(90deg, #10100E 1.15%, #1F2120 47.97%, #10100E 95.75%);
-      font-size: 20px;
-      padding: 10px 15px;
+      &:hover {
+        cursor: pointer;
+        background: #8f7c45;
+        color: black;
+      }
     }
-  }
 
-  input {
-    font-size: 20px;
-    padding: 10px 15px;
-    color: black;
-    outline: none;
-    border: 2px solid #1F2120;
-  }
-}
+    &:first-of-type {
+      height: 70vh;
+      min-height: 300px;
+      min-width: 350px;
 
-.container {
-  background: rgba(0,0,0,1);
-  border: 3px solid;
-  border-image-source: linear-gradient(90deg, #5D4F24 0%, #A3905A 48.05%, #56471D 95.7%);
-  border-image-slice: 1;
-}
+      button {
+        &:hover {
+          color: #450b0a;
+        }
+      }
+    }
 
-%pseudo {
-  content: '';
-  height: 1px;
-  width: 90%;
-  display: block;
-  background: linear-gradient(90deg, #1F1908 1.15%, #B7A156 47.97%, #1F1908 95.75%);
-}
+    ul {
+      list-style: none;
+      overflow-y: scroll;
 
-.header {
-  background: linear-gradient(90.02deg, #1F0300 5.41%, #450B0A 51.03%, #1F0300 95.44%);
+      li {
+        background: linear-gradient(90deg, #10100e 1.15%, #1f2120 47.97%, #10100e 95.75%);
+      }
+    }
 
-  &:before {
-    @extend %pseudo;
-    margin-bottom: 5px;
-  }
-
-  &:after {
-    @extend %pseudo;
-    margin-top: 5px;
-  }
-}
-
-button {
-  background: none;
-  border: 1px solid #8F7C4570;
-  color: #8F7C45;
-  padding: 5px 10px;
-  font-size: 16px;
-
-  &:hover {
-    cursor: pointer;
-    background: #8F7C45;
-    color: #450B0A;
+    input {
+      color: black;
+      outline: none;
+    }
   }
 }
 
 footer {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
   bottom: 0;
-  width: 100%;
-  
+
   p {
     text-align: center;
     font-style: italic;
@@ -105,44 +102,41 @@ footer {
 
     a {
       font-weight: bold;
+      font-size: 12px;
     }
   }
 }
 
-// classes
+/*
+  ========================================
+  General styling
+  ========================================
+*/
 
-.hidden {
-  visibility: hidden;
+.default-border {
+  border: 2px solid #1f2120;
 }
 
-%m-t-children {
-  & > * + * {
-    margin-top: 10px;
+%pseudo {
+  content: '';
+  height: 1px;
+  width: 90%;
+  display: block;
+  background: linear-gradient(90deg, #1f1908 1.15%, #b7a156 47.97%, #1f1908 95.75%);
+}
+
+.title {
+  background: linear-gradient(90.02deg, #1f0300 5.41%, #450b0a 51.03%, #1f0300 95.44%);
+
+  &::before {
+    @extend %pseudo;
+
+    margin-bottom: 5px;
   }
-}
 
-.m-t-children {
-  @extend %m-t-children;
-}
+  &::after {
+    @extend %pseudo;
 
-.m-l-auto {
-  margin-left: auto;
-}
-
-.m-r-auto {
-  margin-right: auto;
-}
-
-.m-t-20 {
-  margin-top: 20px;
-}
-
-.p-x-20 {
-  padding-right: 20px;
-  padding-left: 20px;
-}
-
-.p-y-20 {
-  padding-top: 20px;
-  padding-bottom: 20px;
+    margin-top: 5px;
+  }
 }
