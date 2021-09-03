@@ -26,12 +26,16 @@
   @include direction($direction-property: row);
 }
 
-.justify-between {
-  @include justify($justify-property: space-between);
+.justify-center {
+  @include justify($justify-property: center);
 }
 
 .justify-around {
   @include justify($justify-property: space-around);
+}
+
+.justify-between {
+  @include justify($justify-property: space-between);
 }
 
 .justify-end {
@@ -40,4 +44,8 @@
 
 .align-center {
   @include align($align-property: center);
+}
+
+.wrap {
+  flex-wrap: wrap;
 }

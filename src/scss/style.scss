@@ -1,34 +1,141 @@
 @import 'flex.scss';
+@import 'utilities.scss';
+
+@font-face {
+  font-family: 'adelon-serial-light-regular';
+  src:
+    url('../assets/fonts/adelon-serial-light-regular-webfont.woff2') format('woff2'),
+    url('../assets/fonts/adelon-serial-light-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
+  font-family: 'adelon-serial-light-regular', serif;
+  font-size: 20px;
+  font-weight: normal;
 }
 
-.w-40 {
-  width: 30%;
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  color: #e2a9a6;
+}
+
+body {
+  background-attachment: fixed;
+  background-image: url('../assets/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  position: sticky;
+  top: 0;
 }
 
 main {
-  margin: 30px 15px;
+  height: calc(100vh - 67px);
+  min-height: 350px;
 
-  & > div {
-    margin-top: 50px;
-  }
+  .container {
+    background: rgba(0, 0, 0, 1);
+    border: 3px solid;
+    border-image-source: linear-gradient(90deg, #5d4f24 0%, #a3905a 48.05%, #56471d 95.7%);
+    border-image-slice: 1;
 
-  ul {
-    border: 1px solid black;
-    list-style: none;
+    button {
+      background: none;
+      border: 1px solid #8f7c4570;
+      color: #8f7c45;
+      font-size: 16px;
 
-    & > li + li {
-      border-top: 1px solid black;
+      &:hover {
+        cursor: pointer;
+        background: #8f7c45;
+        color: black;
+      }
+    }
+
+    &:first-of-type {
+      height: 70vh;
+      min-height: 300px;
+      min-width: 350px;
+
+      button {
+        &:hover {
+          color: #450b0a;
+        }
+      }
+    }
+
+    ul {
+      list-style: none;
+      overflow-y: scroll;
+
+      li {
+        background: linear-gradient(90deg, #10100e 1.15%, #1f2120 47.97%, #10100e 95.75%);
+      }
+    }
+
+    input {
+      color: black;
+      outline: none;
     }
   }
+}
 
-  form {
-    & > * + * {
-      margin-top: 10px;
+footer {
+  bottom: 0;
+
+  p {
+    text-align: center;
+    font-style: italic;
+    font-size: 12px;
+
+    a {
+      font-weight: bold;
+      font-size: 12px;
     }
+  }
+}
+
+/*
+  ========================================
+  General styling
+  ========================================
+*/
+
+.default-border {
+  border: 2px solid #1f2120;
+}
+
+%pseudo {
+  content: '';
+  height: 1px;
+  width: 90%;
+  display: block;
+  background: linear-gradient(90deg, #1f1908 1.15%, #b7a156 47.97%, #1f1908 95.75%);
+}
+
+.title {
+  background: linear-gradient(90.02deg, #1f0300 5.41%, #450b0a 51.03%, #1f0300 95.44%);
+
+  &::before {
+    @extend %pseudo;
+
+    margin-bottom: 5px;
+  }
+
+  &::after {
+    @extend %pseudo;
+
+    margin-top: 5px;
   }
 }

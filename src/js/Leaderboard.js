@@ -29,7 +29,11 @@ export default class Leaderboard {
     const list = document.querySelector('ul');
     const listItems = [];
     this.scores.forEach((score) => {
-      listItems.push(createElement('li', '', '', `${score.user}: ${score.score}`));
+      const user = createElement('span', '', '', `${score.user}`);
+      const userScore = createElement('span', '', '', `${score.score}`);
+      const listItem = createElement('li', 'flex-row justify-between p-y-10 p-x-15 default-border');
+      listItem.append(user, userScore);
+      listItems.push(listItem);
     });
     list.innerHTML = '';
     list.append(...listItems);
