@@ -78,6 +78,7 @@ main {
     ul {
       list-style: none;
       overflow-y: scroll;
+      height: 100%;
 
       li {
         background: linear-gradient(90deg, #10100e 1.15%, #1f2120 47.97%, #10100e 95.75%);
