@@ -6,7 +6,7 @@ import API from './API.js';
 const init = () => {
   const leaderboard = new Leaderboard();
   const scoreForm = new ScoreForm();
-  const api = new API('8sOA1diZKlbkrqVkTAWO');
+  const api = new API('RwkZC4A7KooygrLzIsad');
 
   leaderboard.setEventListener(api);
   scoreForm.setEventListener(leaderboard, api);
