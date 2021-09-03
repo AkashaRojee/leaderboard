@@ -6,12 +6,24 @@ export default class Leaderboard {
   }
 
   setEventListener(api) {
-    const refreshButton = document.querySelector('button');
+    const refreshButton = document.querySelectorAll('button')[1];
     refreshButton.addEventListener('click', () => this.refresh(api));
   }
 
   refresh(api) {
+    this.reset();
     api.get(this);
+  }
+
+  add(score) {
+    this.scores.unshift(score);
+    return this;
+  }
+
+  reset() {
+    this
+      .setScores([])
+      .populate();
   }
 
   load(scores) {

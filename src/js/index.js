@@ -6,10 +6,10 @@ import API from './API.js';
 const init = () => {
   const leaderboard = new Leaderboard();
   const scoreForm = new ScoreForm();
-  const api = new API('lI1z1EFW1xGXNj2JItHX');
+  const api = new API('CDN0na2QRL1u7wB93Fh0');
 
   leaderboard.setEventListener(api);
-  scoreForm.setEventListener(api);
+  scoreForm.setEventListener(leaderboard, api);
   api.get(leaderboard);
 };
 

@@ -12,6 +12,7 @@ export default class API {
   }
 
   async post(score) {
+
     await fetch(
 
       this.url,
