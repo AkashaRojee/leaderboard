@@ -4,11 +4,13 @@
 
 > Leaderboard-style website
 
-<!-- ![screenshot](screenshot-mobile.png) -->
+![screenshot](src/assets/leaderboard-desktop.png)
 
 This project is a leaderboard-style website built using ES6 and Webpack as part of Microverse projects.
 
 It displays scores submitted by users and preserves data via an API.
+
+The design is inspired from the video game Mortal Kombat.
 
 Things done so far:
 
